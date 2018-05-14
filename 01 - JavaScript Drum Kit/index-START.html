@@ -60,8 +60,9 @@
 <script>
   window.addEventListener("keydown", function(e) {
     const audioElement = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    return if !audio // stop function from running if null key is pressed
-    console.log(audioElement);
+    if (!audioElement) return; // stop function from running if null key is pressed
+    audioElement.currentTime = 0; // rewind to start
+    audioElement.play();
   });
 </script>
 
