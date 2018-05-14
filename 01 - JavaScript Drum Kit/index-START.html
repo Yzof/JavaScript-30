@@ -61,10 +61,17 @@
   window.addEventListener("keydown", function(e) {
     const audioElement = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const keyElement = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
     if (!audioElement) return; // stop function from running if null key is pressed
+
     audioElement.currentTime = 0; // rewind to start
     audioElement.play();
+
+    keyElement.classList.add('playing')
   });
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 </script>
 
 
