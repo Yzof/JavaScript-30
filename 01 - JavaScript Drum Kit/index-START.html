@@ -67,7 +67,7 @@
     audioElement.currentTime = 0; // rewind to start
     audioElement.play();
 
-    keyElement.classList.add('playing')
+    keyElement.classList.add('playing');
   });
 
   const keys = document.querySelectorAll('.key');
@@ -75,6 +75,7 @@
 
   function removeTransition(e) {
     if (e.propertyName !== 'transition') return ; // Exits out for wrong event
+    this.classList.remove('playing');
   }
 </script>
 
