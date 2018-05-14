@@ -23,9 +23,15 @@
   <style>
 
     :root {
-      base: #ffc600;
-      spacing: 10px;
-      blue: 10px;
+      --base: #ffc600;
+      --spacing: 10px;
+      --blue: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: var(--blue);
     }
 
     /*
