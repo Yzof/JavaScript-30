@@ -40,10 +40,23 @@
     const firstLast = people.map(
       (person) => person.split(" ")
     );
-    console.log(firstLast);
+    // console.log(firstLast);
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const sortedByAge = inventors.sort(sortPeople);
+    function sortPeople(person1, person2) {
+      if (person1.year === person2.year) {
+        return 0
+      }
 
+      if (person1.year > person2.year) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+
+    console.log(sortedByAge);
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
 
